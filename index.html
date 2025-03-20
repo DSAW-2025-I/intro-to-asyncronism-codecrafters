@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+</head>
+<div class="container">
+    <img src="pokedex-logo.png" alt="Pokédex Logo" class="logo">
+
+    <div class="search-container">
+        <input type="text" id="pokemonName" placeholder="Búsqueda por nombre o número">
+        <button onclick="fetchPokemon()">🔍</button>
+        
+        <label for="sortOptions" class="sort-label">Ordenar por:</label>
+        <select id="sortOptions" onchange="sortPokemon()">
+            <option value="low-high">Número más bajo</option>
+            <option value="high-low">Número más alto</option>
+            <option value="a-z">A-Z</option>
+            <option value="z-a">Z-A</option>
+        </select>
+    </div>
+
+    <button id="randomPokemonButton" onclick="fetchRandomPokemon()">🎲 Pokémon Aleatorio</button>
+
+    <div id="errorMessage" class="error-message"></div>
+    <div id="loadingSpinner" class="loading-spinner"></div>
+    <div id="pokemonDetails"></div>
+    
+    <div id="pokemonList" class="pokemon-grid"></div>
+    <button id="loadMoreButton" onclick="loadMorePokemon()">Cargar más Pokémon</button>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
